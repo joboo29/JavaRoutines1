@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays; 
 
 public class JavaRoutine3 {
 
@@ -18,8 +19,21 @@ public class JavaRoutine3 {
 		 * 50, 65, 94, 52, 22, 20, 43, 59, 9, 76, 79, 58, 25, 39, 51 };
 		 */
 
+		var x = 2;
+		System.out.println(x);
+		
 		int[] numbersa = new int[] { 12, 63, 4, 88, 96, 29, 28, 19, 69,
 				73};
+		
+		List<Integer> unsortedList=new ArrayList<>(Arrays.asList(12, 63, 4, 88, 96, 29, 28, 19,
+				 69, 73, 53, 64, 1, 37, 89, 78, 99, 27, 23, 71, 36, 15, 67, 47, 62, 24, 60,
+				 18, 42, 86, 31, 61, 57, 74, 66, 17, 72, 56, 8, 81, 34, 33, 49, 70, 92, 93,
+				 84, 5, 16, 98, 40, 55, 35, 97, 45, 46, 68, 77, 100, 32, 6, 38, 83, 30, 26,
+				 10, 90, 7, 85, 41, 21, 3, 87, 44, 48, 14, 82, 91, 13, 80, 54, 75, 11, 95, 2,
+				 50, 65, 94, 52, 22, 20, 43, 59, 9, 76, 79, 58, 25, 39, 51
+				));
+		
+		System.out.println(unsortedList);
 		
 		// TODO Auto-generated method stub
 		System.out.println("Enter a Number to Perform a Task");

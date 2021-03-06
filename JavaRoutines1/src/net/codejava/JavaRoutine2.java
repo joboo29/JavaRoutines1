@@ -140,41 +140,40 @@ public class JavaRoutine2 {
 
 	static void PrintBurgers() {
 		int budget = 1000;
-		
-		double hyp = (double) budget/100;
-		DecimalFormat df2 = new DecimalFormat("#.00"); 
-		String output = "The output is " + df2.format(hyp); System.out.println(output);
+
+		double hyp = (double) budget / 100;
+		DecimalFormat df2 = new DecimalFormat("#.00");
+		String output = "The output is " + df2.format(hyp);
+		System.out.println(output);
 		System.out.println(output);
 		System.out.println("You have a " + budget + " dollars");
-		
+
 		// Enter data using BufferReader
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));  
-		 
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
 		int burgerCount = 0;
 		int friesCount = 0;
 		int sodaCount = 0;
-		
+
 		int burgerPrice = 325;
 		int friesPrice = 185;
 		int sodaPrice = 150;
-		
+
 		int cost;
 		int itemCount;
-		
+
 		String option = null;
-		
-		while(budget < 2000)
-		{
+
+		while (!(budget < 150)) {
 			System.out.println("Enter a Number to Make a Purchase");
 			System.out.println("1: Burger - Current Count is " + burgerCount);
 			System.out.println("2: Fries - Current Count is " + friesCount);
 			System.out.println("3: Soda - Current Coun4t is " + sodaCount);
-			
-		   if (budget == 100)
-		   {
-			   break;
-		   }
-		   
+
+			if (budget == 100) {
+				break;
+			}
+
 			// Reading data using readLine
 
 			try {
@@ -183,7 +182,7 @@ public class JavaRoutine2 {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			if (option == "1") {
 				System.out.println("How Many Burgers Would You Like");
 				// Reading data using readLine
@@ -196,12 +195,9 @@ public class JavaRoutine2 {
 				}
 				itemCount = Integer.parseInt(input);
 				cost = itemCount * 325;
-				if (cost < budget)
-				{
+				if (cost < budget) {
 					System.out.println("Sorry. Out of Budget");
-				}
-				else
-				{
+				} else {
 					budget = budget - cost;
 					burgerCount = burgerCount + itemCount;
 				}
@@ -218,12 +214,9 @@ public class JavaRoutine2 {
 				}
 				itemCount = Integer.parseInt(input);
 				cost = itemCount * 185;
-				if (cost < budget)
-				{
+				if (cost < budget) {
 					System.out.println("Sorry. Out of Budget");
-				}
-				else
-				{
+				} else {
 					budget = budget - cost;
 					friesCount = friesCount + itemCount;
 				}
@@ -240,57 +233,26 @@ public class JavaRoutine2 {
 				}
 				itemCount = Integer.parseInt(input);
 				cost = itemCount * 150;
-				if (cost < budget)
-				{
+				if (cost < budget) {
 					System.out.println("Sorry. Out of Budget");
-				}
-				else
-				{
+				} else {
 					budget = budget - cost;
 					sodaCount = sodaCount + itemCount;
 				}
 			}
-		   
+
 		}
-		
 
-		FoodItem burger = new FoodItem("Burger", 325, 0);
-		FoodItem fries = new FoodItem("Fries", 185, 0);
-		FoodItem soda = new FoodItem("Soda", 150, 0);
-
-
-		if (!(budget < 150))
-		{
-			System.out.println("Enter a Number to Make a Purchase");
-			System.out.println("1: Burger");
-			System.out.println("2: Fries");
-			System.out.println("3: Soda");
-		}
-		else
-		{
-		   // Tally
-			System.out.println("Enter a Number to Make a Purchase");
-			String burgerMessage = String.format("%s Burgers", String.valueOf(burgerCount));
-			System.out.println(burgerMessage);
-			String friesMessage = String.format("%s Fries", String.valueOf(friesCount));
-			System.out.println(friesMessage);
-			String sodaMessage = String.format("%s Sodas", String.valueOf(sodaCount));
-			System.out.println(sodaMessage);
-		}
-		
-
-
-
-
-
-
-
-
+		String burgerMessage = String.format("%s Burgers", String.valueOf(burgerCount));
+		System.out.println(burgerMessage);
+		String friesMessage = String.format("%s Fries", String.valueOf(friesCount));
+		System.out.println(friesMessage);
+		String sodaMessage = String.format("%s Sodas", String.valueOf(sodaCount));
+		System.out.println(sodaMessage);
 
 	}
 
-	static String getMoneyString(int money)
-	{
+	static String getMoneyString(int money) {
 		/*
 		 * int hypotenuseSquared = (sideAint * sideAint) + (sideBint * sideBint); double
 		 * hyp = (double) hypotenuseSquared; double hypotenuse = Math.pow(hyp, 0.5);
@@ -299,10 +261,9 @@ public class JavaRoutine2 {
 		 */
 		return "";
 	}
-			
-	
+
 	static void RetrieveNumber() {
-		
+
 		int min = 1;
 		int max = 100;
 		// Generate random double value from 50 to 100
@@ -310,22 +271,101 @@ public class JavaRoutine2 {
 		double random_double = Math.random() * (max - min + 1) + min;
 		int randomInteger = (int) random_double;
 		System.out.println(random_double);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-		while(true)
-		{
-		   if (min == 100)
-		   {
-			   break;
-		   }
-		}
-		
 		int quadrant;
 		int phase = 0;
 		int lowerBound = 1;
 		int upperBound = 100;
-		String message = String.format("What is the number betwen %s and %s", String.valueOf(lowerBound), String.valueOf(upperBound));
+		String userInput = null;
+		int userInputInt;
+
+		if (randomInteger < 26) {
+			quadrant = 1;
+		} else if (randomInteger < 51) {
+			quadrant = 2;
+		} else if (randomInteger < 76) {
+			quadrant = 3;
+		} else {
+			quadrant = 4;
+		}
+
+		System.out.println("The goal is to pick a number betwen 1 and 100. Clues will be given along the way");
+		System.out.println("");
+
+		while (true) {
+			// Reading data using readLine
+
+			try {
+				userInput = reader.readLine();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			userInputInt = Integer.parseInt(userInput);
+
+			if (userInputInt == randomInteger) {
+				break;
+			} else {
+				if (phase == 1) {
+					if (!(userInputInt < lowerBound) && !(userInputInt > upperBound)) {
+						phase = 2;
+						if (quadrant == 1 || quadrant == 2) {
+							lowerBound = 1;
+							upperBound = 50;
+						} else {
+							lowerBound = 51;
+							upperBound = 100;
+						}
+					}
+				}
+				else if (phase == 2) {
+					if (!(userInputInt < lowerBound) && !(userInputInt > upperBound)) {
+						phase = 3;
+						switch (quadrant) {
+						case 1:
+							lowerBound = 1;
+							upperBound = 25;
+							break;
+						case 2:
+							lowerBound = 26;
+							upperBound = 50;
+							break;
+						case 3:
+							lowerBound = 51;
+							upperBound = 75;
+							break;
+						case 4:
+							lowerBound = 76;
+							upperBound = 100;
+							break;
+						default:
+							// do nothing
+						}
+
+					}
+				else if (phase == 3) {
+					if (!(userInputInt < lowerBound) && !(userInputInt > upperBound)) {
+						if (userInputInt < randomInteger) {
+							lowerBound = userInputInt + 1;
+						}
+						else
+						{
+							upperBound = userInputInt - 1;
+						}
+					}
+				}
+				
+				}
+
+			}
+
+		}
+
+		String message = String.format("What is the number betwen %s and %s", String.valueOf(lowerBound),
+				String.valueOf(upperBound));
 		System.out.println("What is the number?");
-		
 
 	}
 

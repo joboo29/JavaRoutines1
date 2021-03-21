@@ -3,6 +3,7 @@ package net.codejava;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class JavaRoutine1 {
@@ -16,22 +17,13 @@ public class JavaRoutine1 {
 		System.out.println("4: Hello World Cycle with Variable Spaces");
 		System.out.println("5: Find the Character");
 
-		// 3. Repeat Hello World with Intervals
-		// 4. Hello World
-		// 5. Find the character
+		// Enter data using Scanner
+		Scanner scanner1 = new Scanner(System.in);
 
-		// Enter data using BufferReader
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-		// Reading data using readLine
 		String option = null;
-		try {
-			option = reader.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
+		option = scanner1.next();
+		
 		switch(option) {
 		  case "1":
 		    PrintHelloWorld();
@@ -60,18 +52,11 @@ public class JavaRoutine1 {
 
 	static void PrintHelloCycle() {
 		System.out.println("How many iterations?");
-		// Enter data using BufferReader
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-		// Reading data using readLine
+		// Enter data using Scanner
+		Scanner scanner1 = new Scanner(System.in);		
 		String iteration = null;
-		try {
-			iteration = reader.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		iteration = scanner1.next();
 		int iterationInt = Integer.parseInt(iteration);
 
 		for (int i = 0; i < iterationInt; i++) {
@@ -81,32 +66,19 @@ public class JavaRoutine1 {
 	}
 
 	static void PrintHelloCycleWaits() {
+		
 		System.out.println("How many iterations?");
-		// Enter data using BufferReader
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-		// Reading data using readLine
+		// Enter data using Scanner
+		Scanner scanner1 = new Scanner(System.in);		
 		String iteration = null;
-		try {
-			iteration = reader.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		iteration = scanner1.next();
 		int iterationInt = Integer.parseInt(iteration);
-
-		reader = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("How many seconds wait?");
 		String waitTime = null;
-		try {
-			waitTime = reader.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		waitTime = scanner1.next();
 		int waitTimeInt = Integer.parseInt(waitTime);
-
+		
 		for (int i = 0; i < iterationInt; i++) {
 			System.out.println("Hello World");
 			try {
@@ -120,25 +92,16 @@ public class JavaRoutine1 {
 
 	static void PrintHelloCycleWaves() {
 		System.out.println("How many waves?");
-		// Enter data using BufferReader
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-		// Reading data using readLine
+		// Enter data using Scanner
+		Scanner scanner1 = new Scanner(System.in);	
+
 		String iteration = null;
-		try {
-			iteration = reader.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		iteration = scanner1.next();
 		int iterationInt = Integer.parseInt(iteration);
 
 		for (int i = 0; i < iterationInt; i++) {
 			PrintTheWaves();
-			/*
-			 * try { TimeUnit.SECONDS.sleep(1); } catch (InterruptedException e) { // TODO
-			 * Auto-generated catch block e.printStackTrace(); }
-			 */
 		}
 	}
 
@@ -181,17 +144,14 @@ public class JavaRoutine1 {
 		System.out.println(cityList);
 		System.out.println("Enter the character index");
 		
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		// Enter data using Scanner
+		Scanner scanner1 = new Scanner(System.in);	
 		String stringIndex = null;
-		try {
-			stringIndex = reader.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		stringIndex = scanner1.next();
+
 		int stringIndexInt = Integer.parseInt(stringIndex);
 		
-		String char1 = String.valueOf(cityList.charAt(0));
+		String char1 = String.valueOf(cityList.charAt(stringIndexInt));
 		String returnString = String.format("You returned a %s", char1);
 		System.out.println(returnString);
 		
